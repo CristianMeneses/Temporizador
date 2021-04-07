@@ -9,7 +9,7 @@ package temporizador;
  *
  * @author USER
  */
-public class Temporizador {
+public class Main {
 
     /**
      * @param args the command line arguments

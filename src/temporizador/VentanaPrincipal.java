@@ -5,6 +5,8 @@
  */
 package temporizador;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author USER
@@ -14,8 +16,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
+    private int actividad, descanso;
+    //private Reloj reloj;
+    
     public VentanaPrincipal() {
-        initComponents();
+        this.initComponents();
         this.setVisible(true);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
@@ -83,44 +88,35 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_TActividadActionPerformed
 
     private void BIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BIniciarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BIniciarActionPerformed
+        int aux;
+        do {
+            aux = 0;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+            if (TActividad.getText() != null) {
+                try {
+                    actividad = Integer.parseInt(TActividad.getText());
+                    aux++;
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Ingresa solo numeros");
                 }
+            } else {
+                JOptionPane.showMessageDialog(null, "Ingresa algun valor");
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VentanaPrincipal().setVisible(true);
-            }
-        });
-    }
+            
+            if (TDescanso.getText() != null) {
+                try {
+                    descanso = Integer.parseInt(TDescanso.getText());
+                    aux++;
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Ingresa solo numeros");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Ingresa algun valor");
+            }            
+        } while (aux != 2);
+        Reloj reloj = new Reloj(actividad,descanso);
+        reloj.start(0, 1000);
+    }//GEN-LAST:event_BIniciarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BIniciar;
