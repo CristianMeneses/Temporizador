@@ -5,6 +5,8 @@
  */
 package temporizador;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -142,7 +144,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if (aux == 0) {
             for (int i = 0; i < rondas; i++) {
                 relojA = new RelojActividad(actividad, descanso);
-                relojA.start(0, 1000);
+                try {
+                    relojA.start(0, 1000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
     }//GEN-LAST:event_BIniciarActionPerformed

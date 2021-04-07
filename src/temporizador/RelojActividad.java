@@ -36,8 +36,9 @@ public class RelojActividad {
         }
     }; // fin timertask
 
-    public void start(int timeout, int interval) {
+    public void start(int timeout, int interval) throws InterruptedException {
         timer.schedule(task, timeout, interval);
+        Thread.sleep(((1000*actividad) + (1000*descanso)));
     }
 
 } // fin clase
