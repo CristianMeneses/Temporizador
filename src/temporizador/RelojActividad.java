@@ -8,14 +8,14 @@ package temporizador;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Reloj {
+public class RelojActividad {
 
     private int actividad;
     private int descanso;
     private Timer timer;
-    private boolean isTimerRunning;
+    private RelojDescanso relojD;
 
-    Reloj(int actividad, int descanso) {
+    RelojActividad(int actividad, int descanso) {
         timer = new Timer();
         this.actividad = actividad;
         this.descanso = descanso;
@@ -24,23 +24,14 @@ public class Reloj {
     TimerTask task = new TimerTask() {
         @Override
         public void run() {
-            isTimerRunning = true;
             if (actividad > 0) {
                 actividad--;
             } else {
                 System.out.println("actividad acabada");
-                if (descanso > 0) {
-                    descanso--;
-                } else {
-                    System.out.println("descanso acabado");
-                    isTimerRunning = false;
-                    timer.cancel();
-                    timer.purge();
-                }
-            }
-
-            if (!isTimerRunning) {
-                System.out.println("ronda finalizada");
+                timer.cancel();
+                timer.purge();
+                relojD = new RelojDescanso(descanso);
+                relojD.start(0, 1000);
             }
         }
     }; // fin timertask
