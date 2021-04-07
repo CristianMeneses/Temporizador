@@ -5,8 +5,13 @@
  */
 package temporizador;
 
+import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class RelojActividad {
 
@@ -14,11 +19,13 @@ public class RelojActividad {
     private int descanso;
     private Timer timer;
     private RelojDescanso relojD;
+    Sonido sonido;
 
     RelojActividad(int actividad, int descanso) {
         timer = new Timer();
         this.actividad = actividad;
         this.descanso = descanso;
+        sonido = new Sonido();
     }
 
     TimerTask task = new TimerTask() {
@@ -26,8 +33,12 @@ public class RelojActividad {
         public void run() {
             if (actividad > 0) {
                 actividad--;
+                if (actividad < 3) {
+                    sonido.ReproducirSonidoSuave();
+                }
             } else {
                 System.out.println("actividad acabada");
+                sonido.ReproducirSonidoFuerte();
                 timer.cancel();
                 timer.purge();
                 relojD = new RelojDescanso(descanso);
@@ -38,7 +49,7 @@ public class RelojActividad {
 
     public void start(int timeout, int interval) throws InterruptedException {
         timer.schedule(task, timeout, interval);
-        Thread.sleep(((1000*actividad) + (1000*descanso)));
+        Thread.sleep(((1000 * actividad) + (1000 * descanso)));
     }
 
 } // fin clase

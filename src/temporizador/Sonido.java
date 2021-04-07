@@ -19,14 +19,26 @@ import javax.sound.sampled.UnsupportedAudioFileException;
  */
 public class Sonido {
 
-    public void ReproducirSonido(String nombreSonido) {
+    public void ReproducirSonidoSuave() {
         try {
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(nombreSonido).getAbsoluteFile());
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("E:\\Universidad\\NetBeansProjects\\Temporizador\\Sonidos\\Beep_Suave.wav").getAbsoluteFile());
             Clip clip = AudioSystem.getClip();
             clip.open(audioInputStream);
             clip.start();
-        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
-            System.out.println("Error al reproducir el sonido.");
+
+        } catch (Exception e) {
+            System.out.println("Error al reproducir audio");
+        }
+    }
+    public void ReproducirSonidoFuerte() {
+        try {
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("E:\\Universidad\\NetBeansProjects\\Temporizador\\Sonidos\\Beep_Fuerte.wav").getAbsoluteFile());
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioInputStream);
+            clip.start();
+
+        } catch (Exception e) {
+            System.out.println("Error al reproducir audio");
         }
     }
 }

@@ -12,10 +12,13 @@ public class RelojDescanso {
 
     private int descanso;
     private Timer timer;
+    Sonido sonido;
 
     RelojDescanso(int descanso) {
         timer = new Timer();
         this.descanso = descanso;
+        sonido = new Sonido();
+
     }
 
     TimerTask task = new TimerTask() {
@@ -23,11 +26,15 @@ public class RelojDescanso {
         public void run() {
             if (descanso > 0) {
                 descanso--;
+                if (descanso < 3) {
+                    sonido.ReproducirSonidoSuave();
+                }
             } else {
                 System.out.println("descanso acabado");
+                sonido.ReproducirSonidoFuerte();
                 timer.cancel();
                 timer.purge();
-             
+
             }
         }
     }; // fin timertask
