@@ -10,7 +10,7 @@ Existen varios tipos de pruebas de integración. Las más comunes son big bang, 
 # Integrantes:
 1) Cristian Daniel Meneses Ramírez - 20182020071.
 2) Daniel Felipe Camargo Roa - 2017202078.
-3) 2) Lorena Damian Cardenas - 2018202060.
+3) Lorena Damian Cardenas - 2018202060.
 
 # Retroalimentación
 
