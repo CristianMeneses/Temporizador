@@ -1,6 +1,6 @@
 # Temporizador / Big Bang
 
-¿A qué nos referimos con Big Bang?.
+##¿A qué nos referimos con Big Bang?.
 La mejor forma de aplicar una prueba de integración, está aplicando un enfoque incremental, es decir, ir integrando los módulos poco a poco, con lo cual podemos aislar la detección de errores.
 
 Un enfoque no incremental como lo es el enfoque “big bang”, consiste en integrar todos los módulos y una vez juntos probar el sistema esperando la explosión de errores que se puede generar.
