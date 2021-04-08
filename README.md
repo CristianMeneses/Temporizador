@@ -8,9 +8,9 @@ Un enfoque no incremental como lo es el enfoque “big bang”, consiste en inte
 Existen varios tipos de pruebas de integración. Las más comunes son big bang, top-down y bottom-up. En big bang,  se acoplan todos los módulos de una sola vez, reduciendo la cantidad de pruebas.
 
 # Integrantes:
-Cristian Daniel Meneses Ramírez - 20182020071.
-Lorena Damian Cardenas - 2018202060.
-Daniel Felipe Camargo Roa - 2017202078.
+1) Cristian Daniel Meneses Ramírez - 20182020071.
+2) Daniel Felipe Camargo Roa - 2017202078.
+3) 2) Lorena Damian Cardenas - 2018202060.
 
 # Retroalimentación
 
