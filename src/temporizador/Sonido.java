@@ -21,7 +21,7 @@ public class Sonido {
 
     public void ReproducirSonidoSuave() {
         try {
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("E:\\Universidad\\NetBeansProjects\\Temporizador\\Sonidos\\Beep_Suave.wav").getAbsoluteFile());
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("C:\\Users\\camar\\Desktop\\Temporizador\\Sonidos\\Beep_Suave.wav").getAbsoluteFile());
             Clip clip = AudioSystem.getClip();
             clip.open(audioInputStream);
             clip.start();
@@ -32,7 +32,7 @@ public class Sonido {
     }
     public void ReproducirSonidoFuerte() {
         try {
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("E:\\Universidad\\NetBeansProjects\\Temporizador\\Sonidos\\Beep_Fuerte.wav").getAbsoluteFile());
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("C:\\Users\\camar\\Desktop\\Temporizador\\Sonidos\\Beep_Fuerte.wav").getAbsoluteFile());
             Clip clip = AudioSystem.getClip();
             clip.open(audioInputStream);
             clip.start();

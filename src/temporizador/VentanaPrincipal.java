@@ -45,32 +45,36 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BIniciar = new javax.swing.JButton();
         LDescanso = new javax.swing.JLabel();
         TDescanso = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        LActividad.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         LActividad.setText("Actividad");
-        getContentPane().add(LActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 92, -1, -1));
+        getContentPane().add(LActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, -1, -1));
 
+        LRondas.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         LRondas.setText("Rondas");
-        getContentPane().add(LRondas, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, -1, -1));
+        getContentPane().add(LRondas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
 
-        LTexto.setText("Vamos a introducir el tiempo (en segundos)");
-        getContentPane().add(LTexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 28, -1, -1));
+        LTexto.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        LTexto.setText("¡Hola! Por favor ingresa el tiempo en segundos.");
+        getContentPane().add(LTexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
         TRondas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TRondasActionPerformed(evt);
             }
         });
-        getContentPane().add(TRondas, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 257, -1));
+        getContentPane().add(TRondas, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 90, -1));
 
         TActividad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TActividadActionPerformed(evt);
             }
         });
-        getContentPane().add(TActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 89, 257, -1));
+        getContentPane().add(TActividad, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 90, -1));
 
         BIniciar.setText("Iniciar");
         BIniciar.addActionListener(new java.awt.event.ActionListener() {
@@ -78,17 +82,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 BIniciarActionPerformed(evt);
             }
         });
-        getContentPane().add(BIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 148, -1));
+        getContentPane().add(BIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 148, -1));
 
+        LDescanso.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         LDescanso.setText("Descanso");
-        getContentPane().add(LDescanso, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 187, -1, -1));
+        getContentPane().add(LDescanso, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, -1, -1));
 
         TDescanso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TDescansoActionPerformed(evt);
             }
         });
-        getContentPane().add(TDescanso, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 184, 257, -1));
+        getContentPane().add(TDescanso, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 90, -1));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel1.setText("Temporizador");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 180, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -166,5 +175,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField TActividad;
     private javax.swing.JTextField TDescanso;
     private javax.swing.JTextField TRondas;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
